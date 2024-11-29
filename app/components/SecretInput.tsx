@@ -1,13 +1,13 @@
 import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
-import { Button, Pressable, TextInput, View, Text } from "react-native";
+import { Pressable, TextInput, View, Text, TextInputProps } from "react-native";
 
-export type SecretInputProps = {
+export type SecretInputProps = TextInputProps & {
   label?:string
 }
 
 
-export default function SecretInput({label} : SecretInputProps) {
+export default function SecretInput({label,...rest} : SecretInputProps ) {
   const [isHidden, setIsHidden] = useState<boolean>(true);
 
   return (
@@ -17,6 +17,7 @@ export default function SecretInput({label} : SecretInputProps) {
       <TextInput
         className=" w-10/12 text-gray-300"
         secureTextEntry={isHidden}
+        {...rest}
       />
       {isHidden ? (
         <View className="flex justify-center items-center">
