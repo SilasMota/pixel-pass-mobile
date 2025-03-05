@@ -6,18 +6,21 @@ import * as FileSystem from "expo-file-system";
 
 export type ImageUploaderProps = {
   setImageBase64: any,
-  onUpload?(): any
+  onUpload?(): any,
+  setFormLayout? : any
 }
 
 export default function ImageUploader({
   setImageBase64,
-  onUpload
+  onUpload,
+  setFormLayout
 }: ImageUploaderProps) {
   const [image, setImage] = useState<string | undefined>(undefined);
 
   useEffect;
 
   const pickImageAsync = async () => {
+    
     let result = await ImagePicker.launchImageLibraryAsync({
       quality: 1,
     });
@@ -38,7 +41,10 @@ export default function ImageUploader({
 
   return (
     <Pressable
-      onPress={pickImageAsync}
+      onPress={() => {
+        setFormLayout && setFormLayout([]);
+        pickImageAsync()
+      }}
       className="w-11/12 flex max-h-[425px] max-w-[400px] p-4"
     >
       <View className="flex-col justify-center items-center rounded-lg border-2 border-dashed border-gray-300/25 py-10  w-full h-full">

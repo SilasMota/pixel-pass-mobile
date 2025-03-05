@@ -17,6 +17,7 @@ export default function Index() {
   const [formLayout, setFormLayout] = useState<FormField[]>([]);
 
   function handleDecode() {
+    
     if (imageBase64) {
       const skData = Skia.Data.fromBase64(imageBase64);
       const image = Skia.Image.MakeImageFromEncoded(skData);
@@ -45,15 +46,17 @@ export default function Index() {
         setFormLayout(JSON.parse(decodedText))
       } catch (error) {
         console.log(error);
-        setFormLayout([])
+        setFormLayout([]);
       }
+    } else {
+      setFormLayout([]);
     }
   }
 
   return (
     <ScrollView className="bg-slate-600">
       <View className="flex-1 py-5 items-center bg-slate-600">
-        <ImageUploader setImageBase64={setImageBase64} onUpload={handleDecode}/>
+        <ImageUploader setImageBase64={setImageBase64} onUpload={handleDecode} setFormLayout={setFormLayout} />
         <Button onPress={handleDecode}>
           <Text className="text-gray-300 text-lg py-3 ">Decode</Text>
         </Button>

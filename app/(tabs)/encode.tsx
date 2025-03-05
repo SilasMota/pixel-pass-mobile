@@ -79,37 +79,38 @@ export default function EncodeScreen() {
   }
 
   return (
-    <ScrollView className="bg-slate-600">
-      <View className="flex-1 py-2 items-center bg-slate-600">
-        {/* <SecretInput label="User" />
-        <SecretInput label="Password" /> */}
-        {formLayout.map((field) => (
-          <SecretInput
-            key={field.label}
-            label={field.label}
-            value={field.value}
-          />
-        ))}
-        {/* <Canvas>
-          <Image image={image} fit="contain" />
-        </Canvas> */}
-        {imageBase642 &&
-          <RNImage
-          source={{ uri: imageBase642 }}
-          style={{
-            flex: 1,
-            width: "100%",
-            height: "100%",
-          }}
-          className=" rounded-lg w-full h-full"
-        />
+//     <ScrollView className="bg-slate-600">
+//       <View className="flex-1 py-2 items-center bg-slate-600">
+//         {/* <SecretInput label="User" />
+//         <SecretInput label="Password" /> */}
+//         {formLayout.map((field) => (
+//           <SecretInput
+//             key={field.label}
+//             label={field.label}
+//             value={field.value}
+//           />
+//         ))}
+//         {/* <Canvas>
+//           <Image image={image} fit="contain" />
+//         </Canvas> */}
+//         {imageBase642 &&
+//           <RNImage
+//           source={{ uri: imageBase642 }}
+//           style={{
+//             flex: 1,
+//             width: "100%",
+//             height: "100%",
+//           }}
+//           className=" rounded-lg w-full h-full"
+//         />
             
-}
-        <ImageUploader setImageBase64={setImageBase64} />
-        <Button onPress={handleEncode}>
-          <Text className="text-gray-300 text-lg py-3 ">Encode</Text>
-        </Button>
-      </View>
-    </ScrollView>
+// }
+//         <ImageUploader setImageBase64={setImageBase64} />
+//         <Button onPress={handleEncode}>
+//           <Text className="text-gray-300 text-lg py-3 ">Encode</Text>
+//         </Button>
+//       </View>
+//     </ScrollView>
+    <></>
   );
 }

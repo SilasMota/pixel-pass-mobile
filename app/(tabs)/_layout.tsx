@@ -32,6 +32,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="encode"
         options={{
+          href: null,
           title: "Encode",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
